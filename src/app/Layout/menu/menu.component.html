@@ -1,0 +1,15 @@
+ 
+<ul *ngFor="let sportname of menuData | keyvalue">
+      <li><b><a class="btn" (click)="getMatchesBySportName(sportname.key)">{{sportname.key}}</a></b></li>
+      <ul *ngFor="let countryname of sportname.value | keyvalue">
+            {{countryname.key}} ({{countryname.value.length}})
+            <li class="child">
+                  <ul *ngFor="let leagueName of leagueGropName(countryname.value) | keyvalue">
+                        <li>{{leagueName.key}}</li>
+                  </ul> 
+            </li>
+      </ul>
+</ul> 
+
+
+

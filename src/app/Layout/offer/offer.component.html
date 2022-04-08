@@ -1,0 +1,47 @@
+
+<div *ngFor="let matchData of matchDetails | keyvalue">
+  <span *ngFor="let countryData of matchData.value | keyvalue">
+    <span *ngFor="let leagueData of countryData.value | keyvalue">
+      <div class="mb-3 border-success border border-2 rounded-3 mb-3">
+        <div class="bg-green-9 p-2">
+          <h6 class="text-uppercase mb-4 text-white">{{matchData.key}} - {{countryData.key}} - {{leagueData.key}}</h6>
+        </div>
+        <!-- *ngFor="let marketData of leagueData.value" -->
+        <div class="table-responsive">
+          <table class="table mb-0">
+            <thead class="bg-grey-8">
+              <tr>
+                <th width="44%"><span class="ps-1">{{leagueData.value[0].markets[0].name}}</span></th>
+                <th width="14%" class="ha-c"></th>
+                <th width="7%" class="ha-c" *ngFor="let oddData of leagueData.value[0].markets[0].odds">{{oddData.alias}}
+                </th>
+                <!-- <th width="7%" class="ha-c">1</th>
+                      <th width="7%" class="ha-c">{{oddData.alias}}</th>
+                      <th width="7%" class="ha-c">{{oddData.alias}}</th>
+                      <th width="7%" class="ha-c">{{oddData.alias}}</th>
+                      <th width="7%" class="ha-c">X2</th> -->
+                <th width="7%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let market of leagueData.value">
+                <td class="pl-1" (click)="getMatchComponentData(market)"><a class="btn p-0">{{market.markets[0].competitors}}</a></td>
+                <td class="va-ha-c"><span>pet. {{market.matchDate | date : "HH:mm"}}</span></td>
+                <td class="va-ha-c pl-0 pr-1" *ngFor="let oddData of market.markets[0].odds"><span class="bg-grey-8">{{oddData.values[0]}}</span></td>
+                <!-- <td class="va-ha-c" *ngFor="let value of oddData.values"><span class="bg-red-8 text-white">{{value}}</span></td> -->
+                <!-- <td class="va-ha-c"><span class="bg-grey-8">4.00</span></td>
+                        <td class="va-ha-c"><span class="bg-grey-8">2.25</span></td>
+                        <td class="va-ha-c"><span class="bg-grey-8">1.25</span></td>
+                        <td class="va-ha-c"><span class="bg-grey-8">1.25</span></td> -->
+                <td class="va-ha-c"><span class="">+{{market.markets.length}}</span></td>
+              </tr>
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
+     
+    </span>
+  </span>
+
+</div>
