@@ -1,8 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs/operators';
-import { menulist } from './interfaces/menulist';
-import { SharedDataService } from './Services/shared-data.service';
-import { SocketService } from './services/socket.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +7,4 @@ import { SocketService } from './services/socket.service';
 })
 export class AppComponent {
   title = 'BettingTickets-Angular application to display “offer” and create betting tickets.';
-
-
-  constructor() {
-
-  }
-
-
-  
 }

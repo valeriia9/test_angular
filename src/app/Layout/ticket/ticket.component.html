@@ -1,1 +1,19 @@
-<p>ticket works!</p>
+
+<div class="pl-1 pr-1" *ngIf="ticketData == undefined; else elseBlock"></div>
+
+<ng-template #elseBlock>
+    <div class="col pl-1 pr-1" *ngFor="let ticket of ticketData">
+        <div class="d-flex justify-content-between bg-dark text-white">
+            <div class="p-1">{{ticket.competitors}}</div>
+            <div class="p-1"><button class="btn btn-sm btn-danger text-white" (click)="removeTicket(ticket.ticketId)">X</button></div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="bg-light">{{ticket.marketName}}</div>
+            <div class="bg-light">{{ticket.alias}}</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="bg-light">pet. {{ticket.matchDate | date : "HH:mm"}}</div>
+            <div class="bg-light">{{ticket.values}}</div>
+        </div>
+    </div>
+</ng-template>

@@ -57,6 +57,9 @@
 .bg-green-9 {
     background-color: #3a8533;
 }
+.bg-green-10{
+    background-color: #a5d1a1;
+}
 
 
 /* BG Grey */
@@ -68,9 +71,10 @@
 .bg-grey-8 {
     background-color: #dddddd !important;
 }
-.bg-grey-9{
-    background-color:#b9b5b5 !important;
+.bg-grey-10 {
+    background-color: #bdbdbd !important;
 }
+
 
 /* BG Red */
 
@@ -81,6 +85,8 @@
 .bg-red-8 {
     background-color: #b21210;
 }
+
+
 
 
 /****** Background Color End ******/
