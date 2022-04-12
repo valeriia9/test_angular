@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { menulist } from 'src/app/interfaces/menulist';
 import { SharedDataService } from 'src/app/Services/shared-data.service';
-import { SocketService } from 'src/app/services/socket.service';
+import { SocketService } from 'src/app/Services/socket.service';
+import * as _ from 'underscore';
 
 @Component({
   selector: 'app-match-details',
@@ -14,6 +15,7 @@ export class MatchDetailsComponent implements OnInit {
   offersList: menulist[] = [];//store menu list get from "fulloffer" offer
   matchDetail: any; //for store match details
   
+
   constructor(private sharedDataService: SharedDataService, private socketService: SocketService) { }
 
   ngOnInit(): void {

@@ -24,10 +24,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let market of leagueData.value;" [ngClass]="checkedMarketBackground(market.markets[0].competitors)">
-                <td class="pl-1" (click)="getMatchComponentData(market);setMarketBackground(market.markets[0].competitors)"><a class="btn p-0">{{market.markets[0].competitors}}</a></td>
+              <tr *ngFor="let market of leagueData.value">
+                <td class="pl-1" (click)="getMatchComponentData(market)"><a class="btn p-0">{{market.markets[0].competitors}}</a></td>
                 <td class="va-ha-c"><span>pet. {{market.matchDate | date : "HH:mm"}}</span></td>
-                <td class="va-ha-c pl-0 pr-1" *ngFor="let oddData of market.markets[0].odds; let i = index;"><span [ngClass]="checkedBackground(market.markets[0].competitors,oddData.order)" id="span{{market.markets[0].competitors}}{{oddData.order}}" (click)="toggleTicketWithMarketValue(oddData,market)"><a class="btn p-0">{{oddData.values[0]}}</a></span></td>
+                <td class="va-ha-c pl-0 pr-1" *ngFor="let oddData of market.markets[0].odds"><span class="bg-grey-8">{{oddData.values[0]}}</span></td>
                 <!-- <td class="va-ha-c" *ngFor="let value of oddData.values"><span class="bg-red-8 text-white">{{value}}</span></td> -->
                 <!-- <td class="va-ha-c"><span class="bg-grey-8">4.00</span></td>
                         <td class="va-ha-c"><span class="bg-grey-8">2.25</span></td>

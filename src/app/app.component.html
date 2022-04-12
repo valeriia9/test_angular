@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-12 bg-dark">
+        <div class="col-lg-12 bg-dark mb-1">
             <app-day-filter></app-day-filter>
         </div>
     </div>
@@ -10,14 +10,14 @@
             <app-menu></app-menu>
            
         </div>
-        <div class="col-lg-6 offerwidth p-0 pt-1">
+        <div class="col-lg-6 offerwidth p-0">
             <app-offer></app-offer>
-           
+            <router-outlet></router-outlet>
         </div>
-        <div class="col-lg-3 p-0 pt-1">
+        <div class="col-lg-3 p-0">
             <app-match-details></app-match-details>
         </div>
-        <div class="col-lg-2 p-0 pt-1">
+        <div class="col-lg-2">
             <app-ticket></app-ticket>
         </div>
     </div>

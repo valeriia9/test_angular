@@ -1,39 +1,38 @@
 
 <div class="pl-1 pr-1" *ngIf="matchDetail == undefined; else elseBlock">
-    No Match Seleceted
-   </div>
-   <ng-template #elseBlock>
-     <div class="col pl-1 pr-1"> 
-         <div class="border-success border border-2 rounded-3 mb-3">
-             <div class="bg-green-9 p-2">
-                 <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
-                     <h6 class="text-uppercase mb-0 text-white">{{matchDetail.sportName}} - {{matchDetail.countryName}} - {{matchDetail.leagueName}}</h6>
-                     <h6 class="text-uppercase mb-0 text-white">X</h6>
-                 </div>
-                 <p class="text-white fs-16 mb-0">{{matchDetail.competitors}}</p>
-                 <div class="dash-divider my-2"></div>
-                 <p class="text-white fs-16 mb-0">pet. {{matchDetail.matchDate | date : "HH:mm"}}</p>
-             </div>
-             <div class="table-responsive">
-                 <table class="table mb-0" *ngFor="let marketData of matchDetail.markets">
-                     <thead class="bg-grey-8">
-                       <tr>
-                         <th colspan="2">{{marketData.name}}</th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                       <tr>
-                         <td class="pl-1"><a class="btn p-0">{{marketData.competitors}}</a></td>
-                         <td class="va-ha-c pl-0 pr-1" *ngFor="let oddData of marketData.odds"><span class="bg-grey-10">{{oddData.alias}}</span><span class="bg-grey-8">{{oddData.values[0]}}</span></td>
-                       </tr>
-           
-                     </tbody>
-                   </table>
-             </div>
-         </div>
-     </div>
-   </ng-template>
-      
- 
- 
- 
+   No Match Seleceted
+  </div>
+  <ng-template #elseBlock>
+    <div class="col pl-1 pr-1"> 
+        <div class="border-success border border-2 rounded-3 mb-3">
+            <div class="bg-green-9 p-2">
+                <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
+                    <h6 class="text-uppercase mb-0 text-white">{{matchDetail.sportName}} - {{matchDetail.countryName}} - {{matchDetail.leagueName}}</h6>
+                    <h6 class="text-uppercase mb-0 text-white">X</h6>
+                </div>
+                <p class="text-white fs-16 mb-0">{{matchDetail.competitors}}</p>
+                <div class="dash-divider my-2"></div>
+                <p class="text-white fs-16 mb-0">pet. {{matchDetail.matchDate | date : "HH:mm"}}</p>
+            </div>
+            <div class="table-responsive">
+                <table class="table mb-0" *ngFor="let marketData of matchDetail.markets">
+                    <thead class="bg-grey-8">
+                      <tr>
+                        <th colspan="2">{{marketData.name}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="pl-1"><a class="btn p-0">{{marketData.competitors}}</a></td>
+                        <td class="va-ha-c pl-0 pr-1" *ngFor="let oddData of marketData.odds"><span class="bg-grey-9">{{oddData.alias}}</span><span class="bg-grey-8">{{oddData.values[0]}}</span></td>
+                      </tr>
+          
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+  </ng-template>
+     
+
+

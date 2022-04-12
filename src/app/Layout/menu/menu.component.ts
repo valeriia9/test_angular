@@ -56,11 +56,9 @@ export class MenuComponent implements OnInit {
     return leagueName;
   }
 
-  //getmatch details by sport name
+  //get match details by sport name
   getMatchesBySportName(sportName: any) {
-    // var sportnameList = _.filter(this.menuitem, x => x.sportName == sportName);
-    // var leagueNameList = _.groupBy(sportnameList, 'leagueName');
-    // console.log(leagueNameList)
+ 
     this.sharedDataService.emitSportEvent(sportName);
   }
 

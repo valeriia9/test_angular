@@ -5,7 +5,7 @@
             {{countryname.key}} ({{countryname.value.length}})
             <li class="child">
                   <ul *ngFor="let leagueName of leagueGropName(countryname.value) | keyvalue">
-                        <li (click)="getMatchesBySportName(sportname.key,countryname.key,leagueName.key)">{{leagueName.key}}</li>
+                        <li>{{leagueName.key}}</li>
                   </ul> 
             </li>
       </ul>

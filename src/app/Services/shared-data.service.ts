@@ -1,5 +1,8 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { take } from 'rxjs/operators';
 import * as _ from 'underscore';
+import { menulist } from '../interfaces/menulist';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +10,11 @@ import * as _ from 'underscore';
 export class SharedDataService {
 
   sportName: EventEmitter<any> = new EventEmitter();
+  // offersList: menulist[] = [];//store menu list get from "fulloffer" offer
   matchDetail: EventEmitter<any> = new EventEmitter();   //store match Details
-  marketValue: EventEmitter<any> = new EventEmitter();   //store marketvalue for ticket
 
-  constructor() {}
-  
+  constructor() { }
+
   emitSportEvent(value) {
     this.sportName.emit(value);
   }
@@ -25,21 +28,11 @@ export class SharedDataService {
     this.matchDetail.emit(value);
   }
 
-  //get match detail with event emitter
+  //get sport name data with event emitter
   getMatchDeatilsEventEmitter() {
     return this.matchDetail;
   }
 
-    emitToggleTicketEvent(value) {
-    this.marketValue.emit(value);
-  }
-
-  //get match detail with event emitter
-  getToggleTicketEventEmitter() {
-    return this.marketValue;
-  }
-
-  
   //function for Group Data by sportname,countryname,leaguename
   groupByMulti(offerList, values, context) {
     if (!values.length)
@@ -51,4 +44,20 @@ export class SharedDataService {
     }
     return GroupingData;
   };
+
+  // //Get fullofferList From socket
+  // GetFullOfferList(){
+  //  debugger
+  //   this.socketService.fetchfulloffer();
+  //   this.socketService.OnFetchFullOffer()
+
+  //     .pipe(take(1))  
+  //     .subscribe((offers: any) => {
+
+  //       this.offersList = offers;
+  //       debugger
+
+  //     });
+  //     return this.offersList;
+  // }
 }
